@@ -12,20 +12,12 @@ class ViewController: UIViewController {
     //IBOulet allows me to reference a UI element
     @IBOutlet weak var diceImageViewerOne: UIImageView!
     @IBOutlet weak var diceImageViewerTwo: UIImageView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        diceImageViewerOne.image = #imageLiteral(resourceName: "DiceSix")
-        //diceImageViewerOne.alpha = 0.5
-        diceImageViewerTwo.image = #imageLiteral(resourceName: "DiceTwo")
-    }
+    
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        diceImageViewerOne.image = #imageLiteral(resourceName: "DiceFour")
-        //diceImageViewerOne.alpha = 0.5
-        diceImageViewerTwo.image = #imageLiteral(resourceName: "DiceFour")
-
-        print("Button got tapped")
+        let diceArray = [ #imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
+        diceImageViewerOne.image = diceArray[Int.random(in: 0...5)]
+        diceImageViewerTwo.image = diceArray[Int.random(in: 0...5)]
     }
-    
 }
 
